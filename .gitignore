@@ -1,3 +1,5 @@
+build/
+corosync-quorum-notify
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
