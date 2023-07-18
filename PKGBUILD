@@ -1,6 +1,6 @@
 # Maintainer: Jérôme Poulin <jeromepoulin@gmail.com>
 pkgname=corosync-quorum-notify
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc="Notify external program upon quorum state change in a Corosync cluster"
 arch=('x86_64')

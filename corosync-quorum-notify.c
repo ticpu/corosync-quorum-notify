@@ -84,6 +84,7 @@ static void quorum_notification(quorum_handle_t handle,
 	syslog(LOG_INFO, "quorum state change: %s, calling %s\n", quorate_text, command);
 	ret = system(command);
 	syslog(LOG_INFO, "command returned %d\n", ret);
+	sd_notify(0, "READY=1");
 }
 
 static quorum_callbacks_t callbacks = {
@@ -134,8 +135,6 @@ int main(int argc, char *argv[]) {
 		syslog(LOG_ERR, "Failed to get local node id %d\n", err);
 		return 1;
 	}
-
-	sd_notify(0, "READY=1");
 
 	while(1) {
 		err = poll(&fds, 1, 500);
