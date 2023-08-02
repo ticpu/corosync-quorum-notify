@@ -1,0 +1,13 @@
+[Unit]
+After=corosync.service
+
+[Service]
+Type=notify
+WatchdogSec=15
+CapabilityBoundingSet=
+Environment=/etc/default/corosync-quorum-notify
+ExecStart=/usr/bin/corosync-quorum-notify $NOTIFY_APP
+RuntimeDirectory=corosync-quorum-notify
+
+[Install]
+WantedBy=corosync.service
